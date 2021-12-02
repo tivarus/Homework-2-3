@@ -66,7 +66,7 @@ int main() {
     FILE* file_graph;
     FILE* result;
     char symbol;
-    int ribs = 0, numbers = 0, first, second, dash = 0, Loop = 0, Multiple = 0, SingleDot = 0, x, size = 0, a = 0, start;
+    int ribs = 0, numbers = 0, first, second, Loop = 0, Multiple = 0, x, size = 0, a = 0, start;
 
     file_graph = fopen("graph.txt", "r");
     while ((symbol = getc(file_graph)) != EOF) {
