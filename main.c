@@ -29,7 +29,7 @@ int Sort(int* array, int numbers, int ribs) {
 
 int SearchCycle (int numbers, int* array, int a, int x, int size, int* check, int start, int h){
     int error;
-    while (a < numbers) {
+    for(int a = 0; a < numbers; ++a) {
         if (start == array[a] && a != h) {
 
             if (a % 2 != 0) {
@@ -53,14 +53,10 @@ int SearchCycle (int numbers, int* array, int a, int x, int size, int* check, in
                 if (SearchCycle(numbers, array, 0, x, size, check, check[size] , h) == 1) {
                     return 1;
                 }
-                a +=2;
+                ++a;
             } else {
                 return 1;
             }
-
-        }
-        else{
-            ++a;
         }
     }
     return 0;
