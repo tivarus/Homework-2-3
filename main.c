@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-
 int Sort(int* array, int numbers, int ribs) {
 
     int i, n, j, temp[numbers];
@@ -78,14 +77,8 @@ int main() {
         if (symbol == '\n') {
             ribs ++;
         }
-        if (symbol == '-') {
-            dash ++;
-        }
     }
     ++ribs;
-    if (dash != ribs) {
-        SingleDot = 1;
-    }
     fclose(file_graph);
 
     numbers = ribs * 2;
@@ -117,15 +110,14 @@ int main() {
     int h = array[1];
     int Cycle = SearchCycle(numbers, array, a, x, size, check, start, h);
 
-    int count = Sort(array, numbers, ribs);
+    int Count = Sort(array, numbers, ribs);
 
-    printf("SingleDot is %d\n", SingleDot);
-    printf("count is %d\n", count);
-    printf("cycle is %d\n", Cycle);
+    printf("Count is %d\n", Count);
+    printf("Cycle is %d\n", Cycle);
     printf("Loop is %d\n", Loop);
     printf("Multiple is %d\n", Multiple);
     result = fopen("result.txt", "w");
-    if (Loop == 0 && Multiple == 0 && Cycle != 1 && count == 1 && SingleDot == 0){
+    if (Loop == 0 && Multiple == 0 && Cycle != 1 && Count == 1){
         printf("Graph is a tree\n");
 
         fprintf(result, "graph {\n");
