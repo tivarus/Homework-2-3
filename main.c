@@ -53,7 +53,9 @@ int SearchCycle (int numbers, int* array, int a, int x, int size, int* check, in
                 if (SearchCycle(numbers, array, 0, x, size, check, check[size] , h) == 1) {
                     return 1;
                 }
-                ++a;
+                if (a % 2 == 0) {
+                    ++a;
+                }
             } else {
                 return 1;
             }
